@@ -1,0 +1,47 @@
+﻿@model Divorcify.ViewModels.EventCreateViewModel
+@{
+	ViewBag.Title = "Create Event";
+}
+<h2>
+	Create Event
+</h2>
+@using (Html.BeginForm())
+{
+	@Html.LabelFor(m => m.UserId)
+	@Html.TextBoxFor(m => m.UserId)
+	<br />
+	@Html.LabelFor(m => m.Title)
+	@Html.TextBoxFor(m => m.Title)
+	<br />
+	@Html.LabelFor(m => m.Start)
+	@Html.TextBoxFor(m => m.Start, new { @class = "date-picker" })
+	<br />
+	@Html.LabelFor(m => m.End)
+	@Html.TextBoxFor(m => m.End, new { @class = "date-picker" })
+	<br />
+	@Html.LabelFor(m => m.Location)
+	@Html.TextBoxFor(m => m.Location)
+	<br />
+	@Html.LabelFor(m => m.Note)
+	@Html.TextBoxFor(m => m.Note)
+	<br />
+	<button type="submit">
+		create event
+	</button>
+}
+<div>
+	@foreach (var eEvent in Model.Events)
+ {
+		<div>
+			@eEvent.Title
+		</div>
+ }
+</div>
+@section scripts
+{
+	<script type="text/javascript">
+		$(document).ready(function () {
+			//$('.date-picker').datepicker();
+		});
+	</script>
+}

@@ -1,0 +1,13 @@
+﻿@model List<Divorcify.Models.Event>
+@{
+	ViewBag.Title = "ListEvents";
+}
+<h2>
+	List Events
+</h2>
+@foreach (var eEvent in Model)
+{
+	<div>
+		@eEvent.Title
+	</div>
+}

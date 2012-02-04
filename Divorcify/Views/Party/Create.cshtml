@@ -1,0 +1,35 @@
+﻿@model List<Divorcify.Models.Party>
+@{
+	ViewBag.Title = "Create";
+}
+<h2>
+	Create</h2>
+@ViewBag.Message
+@using (Html.BeginForm())
+{
+	<text> Name1: @Html.TextBox("name1")
+	<br />
+	Name2: @Html.TextBox("name2")
+	<button type="submit">
+		create party</button>
+	</text>
+}
+@foreach (var party in Model)
+{
+	<div>
+		<h3>
+			@party.Id
+		</h3>
+		<p>
+			user 1: <span>
+				@party.User1Id
+			</span>
+			@party.User1.Name
+			<br />
+			user 2: <span>
+				@party.User2Id
+			</span>
+			@party.User2.Name
+		</p>
+	</div>
+}
