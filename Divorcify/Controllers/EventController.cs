@@ -44,6 +44,12 @@ namespace Divorcify.Controllers
 			return Json(new { Success = false, Message = "There was a problem trying to save the event" });
 		}
 
+        [HttpGet]
+        public ActionResult List()
+        {
+            return View();
+        }
+
 		public ActionResult List(string userId)
 		{
 			var resp = new EventListViewModel();
